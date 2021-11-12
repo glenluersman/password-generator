@@ -1,12 +1,30 @@
 // Assignment code here
 var characters = {
-  upperCase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-  lowerCase: "abcdefghijklmnopqrstuvwxyz"
-  number: "0123456789"
-  special: "!@#$%^&*()_+-?.,/"
+  upper: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  lower: "abcdefghijklmnopqrstuvwxyz",
+  number: "0123456789",
+  special: "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
 };
 
-window.prompt("How long will your password be? Choose between 8 and 128.");
+var getPassword = function() {
+  var length = window.prompt("What is the length of your password? Length must be between 8 and 128 characters.");
+
+    var upperCase = function() {
+      var char1 = window.prompt("how many upper case characters?");
+    }   
+
+    var lowerCase = function() {
+      var char2 = window.prompt("how many lower case characters?");
+    }
+
+    var numbers = function() {
+      var char3 = window.prompt("How many numbers?");
+    }
+
+    var symbols = function() {
+      var char4 = window.prompt("how many special characters?");
+    }
+}
 function generatePassword() {
 
 };
@@ -24,3 +42,5 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+getPassword()
