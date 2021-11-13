@@ -1,76 +1,59 @@
+// Get references to the #generate element
+var generateBtn =
+// Add event listener to generate button
+document.querySelector("#generate").addEventListener("click", writePassword);
 // Assignment code here
-var characters = {
-  upper: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-  lower: "abcdefghijklmnopqrstuvwxyz",
-  number: "0123456789",
-  special: "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
-};
+var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var specialChars = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
+var lowerCases = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var upperCases = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-function passwordLength() {
-  var length = "";
-  
-  while (length === "" || length === null) {
-    length = prompt("What is the length of your password? Length must be between 8 and 128 characters.");
-  }
-
-  console.log("Password length is " + length);
-  return length;
-}
-  
-function getPassword() {
-  
-};
-    
-function upperCase(char1) {
-  var char1 = "";
-
-  while (char1 === "" || char1 === null) {
-  char1 = prompt("how many upper case characters?");
-}
-
-console.log(char1 + " upper case letters.");
-
-return char1;
-};
-
-function lowerCase(char2) {
-  var char2 = "";
-      
-  while (char2 === "" || char2 === null) {
-  char2 = prompt("how many lower case characters?");
-  }
-
-  console.log(char2 + " lower case letters.");
-  return char2;
-};
-
-function numbers(char3) {
-  var char3 = "";
-  
-  while (char3 === "" || char3 === null) {
-  char3 = prompt("How many numbers?");
-  }
-
-  console.log(char3 + " numbers.");
-  return char3;
-};
-
-function symbols(char4) {
-  var char4 = "";
-  
-  while (char4 === "" || char4 === null) {
-  char4 = prompt("how many special characters?");
-  }
-
-  console.log(char4 + " special characters.");
-  return char4;
-};
+var length = "";
+var number = "";
+var lower = "";
+var upper = "";
 
 function generatePassword() {
+  var length = window.prompt("What is the length of your password? Length must be between 8 and 128 characters.");
+    while (length <= 7  || length >= 129) {
+      window.alert("Password length must be between 8 and 128 characters try again.");
+      window.alert("Your password will contain " + length + " characters.");
+      return length;
+    };
+    console.log("Pasword length is " + length);
 
-};
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+  var number = window.prompt("How many numbers would you like to use?");
+    while (number === "" || number === null) {
+      window.alert("Enter a valid response.");
+      window.alert("You have chosen " + number + " numbers.");
+      return number;
+    };
+    console.log(number + " numbers");
+
+  var lower = window.prompt("How many lower case letters would you like to use?");
+    while (lower === "" || lower === null) {
+      window.alert("Enter a valid response.");
+      window.alert("You have chosen " + lower + " lower case letters.");
+      return lower;
+    };
+    console.log(lower + " lower case letters")
+
+    var upper = window.prompt("How many upper case letters would you like to use?");
+      while (upper === "" || upper === null) {
+        window.alert("Enter a valid response.");
+        window.alert("You have chosen " + upper + " upper case letters.");
+        return upper;
+      };
+      console.log(upper + " upper case letters")
+
+      var special = window.prompt("How many special characters would you like to use?");
+        while (special === "" || special === null) {
+          window.alert("Enter a valid response.");
+          window.alert("You have chosen " + special + " special characters.");
+          return special;
+        };
+        console.log(special + " special characters");
+  };
 
 // Write password to the #password input
 function writePassword() {
@@ -81,11 +64,5 @@ function writePassword() {
 
 };
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-passwordLength()
-upperCase()
-lowerCase()
-numbers()
-symbols()
+writePassword()
+generatePassword()
