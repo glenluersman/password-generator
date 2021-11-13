@@ -6,25 +6,66 @@ var characters = {
   special: "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
 };
 
-var getPassword = function() {
-  var length = window.prompt("What is the length of your password? Length must be between 8 and 128 characters.");
+function passwordLength() {
+  var length = "";
+  
+  while (length === "" || length === null) {
+    length = prompt("What is the length of your password? Length must be between 8 and 128 characters.");
+  }
 
-    var upperCase = function() {
-      var char1 = window.prompt("how many upper case characters?");
-    }   
-
-    var lowerCase = function() {
-      var char2 = window.prompt("how many lower case characters?");
-    }
-
-    var numbers = function() {
-      var char3 = window.prompt("How many numbers?");
-    }
-
-    var symbols = function() {
-      var char4 = window.prompt("how many special characters?");
-    }
+  console.log("Password length is " + length);
+  return length;
 }
+  
+function getPassword() {
+  
+};
+    
+function upperCase(char1) {
+  var char1 = "";
+
+  while (char1 === "" || char1 === null) {
+  char1 = prompt("how many upper case characters?");
+}
+
+console.log(char1 + " upper case letters.");
+
+return char1;
+};
+
+function lowerCase(char2) {
+  var char2 = "";
+      
+  while (char2 === "" || char2 === null) {
+  char2 = prompt("how many lower case characters?");
+  }
+
+  console.log(char2 + " lower case letters.");
+  return char2;
+};
+
+function numbers(char3) {
+  var char3 = "";
+  
+  while (char3 === "" || char3 === null) {
+  char3 = prompt("How many numbers?");
+  }
+
+  console.log(char3 + " numbers.");
+  return char3;
+};
+
+function symbols(char4) {
+  var char4 = "";
+  
+  while (char4 === "" || char4 === null) {
+  char4 = prompt("how many special characters?");
+  }
+
+  console.log(char4 + " special characters.");
+  return char4;
+};
+
 function generatePassword() {
 
 };
@@ -38,9 +79,13 @@ function writePassword() {
 
   passwordText.value = password;
 
-}
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-getPassword()
+passwordLength()
+upperCase()
+lowerCase()
+numbers()
+symbols()
