@@ -1,11 +1,12 @@
 
-// Assignment code here
+// global variables to be use in creating password
 var number = "0123456789";
 var lower = "abcdefghijklmnopqrstuvwxyz";
 var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var special = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 var characters = "";
 
+// function to create password
 function generatePassword() {
   var length = Number(prompt("What is the length of your password? Length must be between 8 and 128 characters."));
   while (length <= 7  || length >= 129) {
@@ -13,6 +14,7 @@ function generatePassword() {
     var length = Number(prompt("What is the length of your password? Length must be between 8 and 128 characters."));
   };
   
+  // prompts to receive input from user
   var numbers = window.confirm("Would you like numbers in your password?");
   var lowerCase = window.confirm("Would you like lower case letters in your password?");
   var upperCase = window.confirm("Would you like upper case letters in you password?");
@@ -25,6 +27,7 @@ function generatePassword() {
     var specialChars = window.confirm("Would you like special characters in your password?");
   };
   
+  // if statements to confirm input characters
   if (numbers) {
     characters += number
   }
@@ -38,6 +41,7 @@ function generatePassword() {
     characters += special
   }
   
+  // loop that creates the password
   var newPassword = "";
   for (var i = 0; i < length; i++) {
     newPassword = characters[Math.floor(Math.random() * characters.length)];
