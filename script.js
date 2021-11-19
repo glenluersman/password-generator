@@ -4,10 +4,10 @@ var number = "0123456789";
 var lower = "abcdefghijklmnopqrstuvwxyz";
 var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var special = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
-var characters = "";
 
 // function to create password
 function generatePassword() {
+  var characters = "";
   var length = Number(prompt("What is the length of your password? Length must be between 8 and 128 characters."));
   while (length <= 7  || length >= 129) {
     window.alert("Password length must be between 8 and 128 characters try again.");
@@ -44,7 +44,7 @@ function generatePassword() {
   // loop that creates the password
   var newPassword = "";
   for (var i = 0; i < length; i++) {
-    newPassword = characters[Math.floor(Math.random() * characters.length)];
+    newPassword += characters[Math.floor(Math.random() * characters.length)];
   }
   console.log(newPassword);
   return newPassword;
