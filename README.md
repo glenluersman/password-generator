@@ -44,4 +44,6 @@ This password generator creates a password that is 8-128 characters long. It use
 
 ## <img id="screenshots" src="https://github.com/teamjuli0/readme-badges/blob/main/themes/clean-dark/menu-categories/screenshots.png?raw=true" style="height: 40px">
 
+Deployed at: https://glenluersman.github.io/week3-challenge/
+
 <img style="margin: 0 0 15px 0" src="./assets/images/password-generator.PNG" ></a>
